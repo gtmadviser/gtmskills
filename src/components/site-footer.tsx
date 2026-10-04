@@ -7,6 +7,9 @@ export function SiteFooter() {
       <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-6 font-mono text-[11px] tracking-wide text-muted uppercase sm:px-8">
         <p>GTM Skills · GTM Adviser · stars {checkedOn}</p>
         <div className="flex gap-4">
+          <Link href="/imprint" className="hover:text-accent">
+            Imprint
+          </Link>
           <Link href="/method" className="hover:text-accent">
             Method
           </Link>

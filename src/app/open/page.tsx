@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Directory } from "@/components/directory";
+import { submissionEntries } from "@/lib/submissions";
 
 export const metadata: Metadata = {
   title: "Open shelf",
   description: "Public GTM repos that are on topic and not yet vetted.",
 };
 
-export default function OpenPage() {
+export default async function OpenPage() {
+  const submitted = await submissionEntries();
   return (
     <main className="py-10">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
@@ -20,7 +22,12 @@ export default function OpenPage() {
       </div>
       <div className="mt-8">
         <Suspense fallback={<p className="px-8 text-muted">Loading the open shelf…</p>}>
-          <Directory view="repos" lockedTier="open" />
+          <Directory
+            view="repos"
+            lockedTier="open"
+            extraRepos={submitted.repos}
+            extraSkills={submitted.skills}
+          />
         </Suspense>
       </div>
     </main>

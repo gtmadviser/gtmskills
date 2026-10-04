@@ -3,7 +3,7 @@ import { repos, skills } from "@/data/catalog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://gtmskills.cc";
-  const staticRoutes = ["", "/skills", "/repos", "/open", "/method", "/submit"].map((path) => ({
+  const staticRoutes = ["", "/skills", "/repos", "/open", "/method", "/submit", "/imprint"].map((path) => ({
     url: `${base}${path}`,
   }));
   const repoRoutes = repos.map((repo) => ({ url: `${base}/repos/${repo.slug}` }));

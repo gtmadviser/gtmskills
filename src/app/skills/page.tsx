@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Directory } from "@/components/directory";
+import { submissionEntries } from "@/lib/submissions";
 
 export const metadata: Metadata = {
   title: "Skills",
   description: "Agent skills for GTM work, from the house pack and the vetted repos.",
 };
 
-export default function SkillsPage() {
+export default async function SkillsPage() {
+  const submitted = await submissionEntries();
   return (
     <main className="py-10">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
@@ -19,7 +21,7 @@ export default function SkillsPage() {
       </div>
       <div className="mt-8">
         <Suspense fallback={<p className="px-8 text-muted">Loading skills…</p>}>
-          <Directory view="skills" />
+          <Directory view="skills" extraRepos={submitted.repos} extraSkills={submitted.skills} />
         </Suspense>
       </div>
     </main>

@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Directory } from "@/components/directory";
+import { submissionEntries } from "@/lib/submissions";
 
 export const metadata: Metadata = {
   title: "Repos",
   description: "House, vetted, and open GTM repositories.",
 };
 
-export default function ReposPage() {
+export default async function ReposPage() {
+  const submitted = await submissionEntries();
   return (
     <main className="py-10">
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
@@ -20,7 +22,7 @@ export default function ReposPage() {
       </div>
       <div className="mt-8">
         <Suspense fallback={<p className="px-8 text-muted">Loading repos…</p>}>
-          <Directory view="repos" />
+          <Directory view="repos" extraRepos={submitted.repos} extraSkills={submitted.skills} />
         </Suspense>
       </div>
     </main>
