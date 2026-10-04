@@ -47,14 +47,20 @@ export default async function Home() {
             GTM
             <span className="block text-accent">SKILLS</span>
           </h1>
-          <p className="mt-6 max-w-xl text-[15px] leading-6 text-muted">
-            Free GitHub repos and agent skills for go-to-market. .md files community-approved by
-            the{" "}
-            <a href="https://gtmengineer.dev" className="text-ink underline decoration-accent/70 underline-offset-2 hover:text-accent">
-              GTM engineering community
-            </a>
-            , plus an open shelf for new repos and skills to be submitted. Context is king.
-          </p>
+          <div className="mt-6 max-w-xl space-y-2 text-[15px] leading-6 text-muted">
+            <p>Free GitHub repos and agent skills for go-to-market.</p>
+            <p>
+              .md files community-approved by the{" "}
+              <a
+                href="https://gtmengineer.dev"
+                className="text-ink underline decoration-accent/70 underline-offset-2 hover:text-accent"
+              >
+                GTM engineering community
+              </a>
+              .
+            </p>
+            <p>+ an open shelf for new repos and skills to be submitted. Context is king.</p>
+          </div>
         </div>
         <div className="relative flex flex-col gap-4">
           <CopyCommand label="Install the house pack" value="npx skills add gtmadviser/agentic-gtm" />
