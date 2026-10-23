@@ -1,4 +1,4 @@
-export const checkedOn = "4 Oct 2026";
+export const checkedOn = "23 Oct 2026";
 
 export type Tier = "house" | "vetted" | "open";
 
@@ -109,6 +109,12 @@ export const authors: Author[] = [
     org: "Onvoyage",
     url: "https://github.com/onvoyage-ai",
   },
+  {
+    slug: "blitz",
+    name: "Blitz API",
+    org: "Blitz",
+    url: "https://github.com/api-blitz",
+  },
 ];
 
 export type Command = { label: string; value: string };
@@ -168,7 +174,7 @@ export const repos: Repo[] = [
       "Eric Nowoslawski's Claude Code system for cold email: ICP, lists, copy, Smartlead, and deliverability.",
     why: "The free outbound pack we point people to. It is built around a real sending stack, Prospeo and Blitz and Smartlead, and it includes the unglamorous parts: inbox lifecycle, incident response, and a list scorecard before anyone hits send. Fifty-two skills in the repo. The shelf lists the ones to open first.",
     author: "eric",
-    stars: 736,
+    stars: 777,
     license: "see repo",
     categories: ["outbound", "lists", "copy", "deliverability", "icp"],
     commands: [
@@ -188,7 +194,7 @@ export const repos: Repo[] = [
       "A nineteen-skill curriculum for founder-led GTM on a developer tool: ICP, positioning, homepage, pricing, first users, launch.",
     why: "The right pack when the product is a devtool and the founder is still the GTM team. It starts from a founder brief and refuses generic advice. Public description credits Frankl and Czakon. MIT. Product Hunt's top product the day it launched.",
     author: "aidevgtm",
-    stars: 309,
+    stars: 323,
     license: "MIT",
     homepage: "https://gtmcofounder.com",
     categories: ["devtools", "positioning", "copy", "growth"],
@@ -205,7 +211,7 @@ export const repos: Repo[] = [
       "ColdIQ's library of triggers, email frameworks, list hygiene, and GTM plays for Claude Code.",
     why: "A working agency's play library, published. The repo is large, including a LinkedIn ads and content set, and the quality is uneven across ninety-plus skill files. The shelf lists the outbound core: first touch, follow-up, ICP, contacts, and list hygiene.",
     author: "coldiq",
-    stars: 293,
+    stars: 305,
     categories: ["outbound", "copy", "lists", "icp", "linkedin"],
     commands: [
       { label: "Install the skills", value: "npx skills add Cold-IQ/ColdIQ-s-GTM-Skills" },
@@ -221,7 +227,7 @@ export const repos: Repo[] = [
       "Corey Haines' marketing skill pack: copy, CRO, pricing, launch, research, and cold email.",
     why: "The growth layer a GTM agent should load next to an outbound system. Fifty skills cover ads, SEO, and lifecycle. We list the thirteen that change an offer, a page, a price, or a first email. The rest of the repo is public if you want it.",
     author: "corey",
-    stars: 52806,
+    stars: 56163,
     categories: ["growth", "copy", "positioning"],
     commands: [
       { label: "Install the skills", value: "npx skills add coreyhaines31/marketingskills" },
@@ -237,7 +243,7 @@ export const repos: Repo[] = [
       "A CLAUDE.md company brain, five GTM skills, safety hooks, and a blueprint for running the business in Claude Code.",
     why: "A useful blank structure: a blueprint, five markdown skills, and safety hooks. Each skill file says it is a template to customize, not a finished skill. That keeps it on the open shelf. Agentic GTM is the operating system. This is a lighter starter.",
     author: "workflows",
-    stars: 91,
+    stars: 92,
     categories: ["context", "operating-system", "copy"],
     commands: [
       {
@@ -309,7 +315,7 @@ export const repos: Repo[] = [
     summary: "Public GTM skills described by the authors as production-grade.",
     why: "On the open shelf because the repo is on-topic and public. We have not run it on an engagement, so it does not sit with the vetted packs.",
     author: "swan",
-    stars: 164,
+    stars: 218,
     categories: ["outbound", "operating-system"],
     commands: [{ label: "Repository", value: "https://github.com/swan-gtm/gtm-skills" }],
   },
@@ -321,7 +327,7 @@ export const repos: Repo[] = [
     summary: "Explorium's GTM skills for Claude and Codex: research, enrichment, and prospecting.",
     why: "A data vendor's skill pack. Useful to read if you already use Explorium. Open shelf until we have used it beside a source we already trust.",
     author: "explorium",
-    stars: 138,
+    stars: 295,
     categories: ["lists", "icp"],
     commands: [{ label: "Repository", value: "https://github.com/explorium-ai/gtm-skills" }],
   },
@@ -333,7 +339,7 @@ export const repos: Repo[] = [
     summary: "Agent toolkit for research, intel, outreach, and CRM.",
     why: "Public and clearly GTM. The README is short. Open shelf until someone here has run the toolkit on a live account.",
     author: "gtm-skills",
-    stars: 171,
+    stars: 181,
     categories: ["outbound", "context"],
     commands: [{ label: "Repository", value: "https://github.com/gtm-skills/gtm" }],
   },
@@ -345,7 +351,7 @@ export const repos: Repo[] = [
     summary: "A public go-to-market copilot skill repo.",
     why: "The description is broad. Stars are not a review. It stays on the open shelf until the skills have been read against a real ICP.",
     author: "gtm-strategist",
-    stars: 260,
+    stars: 269,
     categories: ["positioning", "growth"],
     commands: [
       { label: "Repository", value: "https://github.com/GTM-Strategist/gtm-strategist-skills" },
@@ -360,11 +366,27 @@ export const repos: Repo[] = [
       "A Claude Code skill that scores a site for AI-engine and generative-engine optimization.",
     why: "Popular, and narrow. It is a page-audit skill for being cited by answer engines. Useful context for a launch, and a different job from outbound. Open shelf as a specialist, not as a GTM system.",
     author: "onvoyage",
-    stars: 1314,
+    stars: 1329,
     categories: ["growth"],
     commands: [
       { label: "Repository", value: "https://github.com/onvoyage-ai/gtm-engineer-skills" },
     ],
+  },
+  {
+    slug: "blitz-skills",
+    name: "Blitz API skills",
+    github: "api-blitz/skills",
+    tier: "open",
+    summary:
+      "Three skills that turn a lead-list goal into a Blitz brief, a runnable SDK script, and a review before the job spends credits.",
+    why: "Blitz's own pack for a search on their API. The helpers that stay off the API ran: package-manager detection, the plugin version check (0.2.1, current), and the SDK version check. The live enum pull does not. pull_enums.sh exits on the current OpenAPI spec because the changelog's type field is read as a second company-type list. The committed snapshot still searches, and it rejects a fake industry like SaaS. That keeps the pack on the open shelf. Eric's outbound repo already has a Blitz list skill. This is the vendor's pack beside it. The GTM and productivity folders are empty.",
+    author: "blitz",
+    stars: 1,
+    license: "MIT",
+    homepage: "https://www.blitz-api.ai",
+    categories: ["lists", "icp", "devtools"],
+    commands: [{ label: "Install the skills", value: "npx skills add api-blitz/skills" }],
+    skillCountNote: "Three skills in the repo. The GTM and productivity folders are placeholders.",
   },
 ];
 
@@ -374,6 +396,7 @@ const cofounder = "gtm-cofounder";
 const coldiq = "coldiq";
 const corey = "marketing-skills";
 const company = "company-os";
+const blitz = "blitz-skills";
 
 export const skills: Skill[] = [
   {
@@ -1069,6 +1092,30 @@ export const skills: Skill[] = [
     categories: ["context"],
     summary: "Discovery-call prep skill shipped inside the Company OS starter kit.",
   },
+  {
+    slug: "blitz-skills--blitz-gtm-brainstorm",
+    name: "blitz-gtm-brainstorm",
+    repo: blitz,
+    categories: ["lists", "icp"],
+    summary:
+      "Turns a one-line list goal into gtm-brief.yaml: one endpoint, keyword-first filters, and enum values that have to match exactly.",
+  },
+  {
+    slug: "blitz-skills--blitz-create-script",
+    name: "blitz-create-script",
+    repo: blitz,
+    categories: ["lists", "devtools"],
+    summary:
+      "Writes a Python, TypeScript, or JavaScript script on the official Blitz SDK, and leaves the API key in the environment.",
+  },
+  {
+    slug: "blitz-skills--blitz-reviewer",
+    name: "blitz-reviewer",
+    repo: blitz,
+    categories: ["devtools", "lists"],
+    summary:
+      "Checks the MCP, the SDK, and the code against the live docs, then waits for a yes before it changes anything.",
+  },
 ];
 
 const tierOrder: Record<Tier, number> = { house: 0, vetted: 1, open: 2 };
@@ -1101,6 +1148,7 @@ const shelfOrder = [
   "company-os",
   "swan",
   "explorium",
+  "blitz-skills",
   "gtm-toolkit",
   "gtm-strategist",
   "geo-engineer",
