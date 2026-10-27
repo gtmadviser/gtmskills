@@ -121,6 +121,12 @@ export const authors: Author[] = [
     org: "Blueprint",
     url: "https://github.com/SantaJordan",
   },
+  {
+    slug: "extruct",
+    name: "Extruct",
+    org: "Extruct",
+    url: "https://github.com/extruct-ai",
+  },
 ];
 
 export type Command = { label: string; value: string };
@@ -435,6 +441,21 @@ export const repos: Repo[] = [
     ],
     skillCountNote: "Six skills in the repo.",
   },
+  {
+    slug: "extruct",
+    name: "Extruct GTM skills",
+    github: "extruct-ai/gtm-skills",
+    tier: "open",
+    summary:
+      "Extruct's outbound pack: context, company lists, enrichment, email, and sending, built around their search API.",
+    why: "Extruct's own pack for a campaign on their API. Twenty-one skills, from a context file through Instantly. The email renderer ran here with no key: two contacts became six touches, the enterprise row took the enterprise third touch, the row with no industry fell back, and no placeholder survived. The extruct-api skill tells the agent to run skills/extruct-api/scripts/extruct-api. That script is not in the repo. Search, tables, and people search need an Extruct token. The repo ships no license file. Open shelf until this has been run on a live list.",
+    author: "extruct",
+    stars: 110,
+    homepage: "https://www.extruct.ai",
+    categories: ["outbound", "lists", "copy", "icp", "context"],
+    commands: [{ label: "Install the skills", value: "npx skills add extruct-ai/gtm-skills" }],
+    skillCountNote: "Twenty-one skills in the repo.",
+  },
 ];
 
 const house = "agentic-gtm";
@@ -446,6 +467,7 @@ const corey = "marketing-skills";
 const company = "company-os";
 const blitz = "blitz-skills";
 const jordan = "gtm-engineer-starter";
+const extruct = "extruct";
 
 export const skills: Skill[] = [
   {
@@ -1221,6 +1243,157 @@ export const skills: Skill[] = [
     summary:
       "Walks a project wiki for orphan pages, broken links, stale claims, and frontmatter that does not match the pattern. It reports the problems and leaves the pages for a person to change.",
   },
+  {
+    slug: "extruct--context-building",
+    name: "context-building",
+    repo: extruct,
+    categories: ["context", "icp"],
+    summary:
+      "Writes the company file the other skills read: product, voice, ICP, proof, and the do-not-contact list.",
+  },
+  {
+    slug: "extruct--hypothesis-building",
+    name: "hypothesis-building",
+    repo: extruct,
+    categories: ["icp"],
+    summary: "Turns that file into pain hypotheses and search angles. No API key.",
+  },
+  {
+    slug: "extruct--market-research",
+    name: "market-research",
+    repo: extruct,
+    categories: ["icp"],
+    summary: "Researches a vertical's pain points and writes them as a numbered hypothesis set.",
+  },
+  {
+    slug: "extruct--list-building",
+    name: "list-building",
+    repo: extruct,
+    categories: ["lists", "icp"],
+    summary: "Finds companies on Extruct by search, discovery, or lookalike.",
+  },
+  {
+    slug: "extruct--enrichment-design",
+    name: "enrichment-design",
+    repo: extruct,
+    categories: ["lists"],
+    summary:
+      "Designs the columns that score hypothesis fit and the columns that hold a company-specific hook.",
+  },
+  {
+    slug: "extruct--table-creation",
+    name: "table-creation",
+    repo: extruct,
+    categories: ["lists"],
+    summary: "Creates an Extruct table, uploads the rows, and can start enrichment.",
+  },
+  {
+    slug: "extruct--list-enrichment",
+    name: "list-enrichment",
+    repo: extruct,
+    categories: ["lists"],
+    summary: "Adds those research columns to an Extruct company table.",
+  },
+  {
+    slug: "extruct--list-segmentation",
+    name: "list-segmentation",
+    repo: extruct,
+    categories: ["lists", "icp"],
+    summary: "Tiers the enriched table by hypothesis fit and how much data each row actually has.",
+  },
+  {
+    slug: "extruct--account-research",
+    name: "account-research",
+    repo: extruct,
+    categories: ["lists", "context"],
+    summary: "Builds one account dossier: the buying group, live signals, and an entry angle.",
+  },
+  {
+    slug: "extruct--people-search",
+    name: "people-search",
+    repo: extruct,
+    categories: ["lists"],
+    summary: "Finds LinkedIn profiles of decision makers from an Extruct company table.",
+  },
+  {
+    slug: "extruct--email-search",
+    name: "email-search",
+    repo: extruct,
+    categories: ["lists"],
+    summary: "Looks up email and phone for those profiles through Prospeo or FullEnrich.",
+  },
+  {
+    slug: "extruct--email-prompt-building",
+    name: "email-prompt-building",
+    repo: extruct,
+    categories: ["copy", "outbound"],
+    summary:
+      "Writes the sequence as fixed templates with placeholders, approved before any row is filled.",
+  },
+  {
+    slug: "extruct--email-generation",
+    name: "email-generation",
+    repo: extruct,
+    categories: ["copy", "outbound"],
+    summary:
+      "Fills those templates from a contact CSV. Variant routing and substitution, no model call per row.",
+  },
+  {
+    slug: "extruct--atomic-message",
+    name: "atomic-message",
+    repo: extruct,
+    categories: ["copy", "outbound"],
+    summary: "Drafts one cold email, LinkedIn note, or follow-up from a signal, then lints the draft.",
+  },
+  {
+    slug: "extruct--email-response-simulation",
+    name: "email-response-simulation",
+    repo: extruct,
+    categories: ["copy"],
+    summary: "Reads one draft as a skeptical buyer and writes the reaction before the business judgment.",
+  },
+  {
+    slug: "extruct--email-verification",
+    name: "email-verification",
+    repo: extruct,
+    categories: ["deliverability", "outbound"],
+    summary: "Checks addresses before send and drops invalid, catch-all, and unknown ones.",
+  },
+  {
+    slug: "extruct--campaign-sending",
+    name: "campaign-sending",
+    repo: extruct,
+    categories: ["outbound"],
+    summary: "Uploads the finished leads into an Instantly campaign, with a checklist before anything sends.",
+  },
+  {
+    slug: "extruct--inbox-reply",
+    name: "inbox-reply",
+    repo: extruct,
+    categories: ["outbound"],
+    summary: "Pulls unread Instantly replies, classifies them, and drafts the response.",
+  },
+  {
+    slug: "extruct--competitor-monitoring",
+    name: "competitor-monitoring",
+    repo: extruct,
+    categories: ["positioning"],
+    summary: "Builds an Extruct table that tracks competitor blogs, news, people, and the business model.",
+  },
+  {
+    slug: "extruct--post-engagers",
+    name: "post-engagers",
+    repo: extruct,
+    categories: ["linkedin", "lists"],
+    summary: "Pulls people who engaged with a LinkedIn post into a local SQLite file.",
+  },
+  {
+    slug: "extruct--extruct-api",
+    name: "extruct-api",
+    repo: extruct,
+    categories: ["devtools", "lists"],
+    summary: "The reference the other skills use for search, tables, columns, and enrichment.",
+  },
 ];
 
 const tierOrder: Record<Tier, number> = { house: 0, vetted: 1, open: 2 };
@@ -1255,6 +1428,7 @@ const shelfOrder = [
   "company-os",
   "swan",
   "explorium",
+  "extruct",
   "blitz-skills",
   "gtm-toolkit",
   "gtm-strategist",
