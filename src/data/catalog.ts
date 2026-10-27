@@ -1,4 +1,4 @@
-export const checkedOn = "23 Oct 2026";
+export const checkedOn = "27 Oct 2026";
 
 export type Tier = "house" | "vetted" | "open";
 
@@ -115,6 +115,12 @@ export const authors: Author[] = [
     org: "Blitz",
     url: "https://github.com/api-blitz",
   },
+  {
+    slug: "jordan",
+    name: "Jordan Crawford",
+    org: "Blueprint",
+    url: "https://github.com/SantaJordan",
+  },
 ];
 
 export type Command = { label: string; value: string };
@@ -166,6 +172,26 @@ export const repos: Repo[] = [
     ],
   },
   {
+    slug: "maps-scraper",
+    name: "Google Maps scraper",
+    github: "gtmadviser/google-maps-scraper",
+    tier: "house",
+    summary:
+      "Local business lists from Google Maps through Serper. A category and a set of locations become a deduplicated CSV, with a request cap and a resume.",
+    why: "The Maps tool we maintain, next to the operating system. Python 3.10 or newer, no packages, and a dry run before any credit is spent. Seventeen offline tests passed. US ZIPs and postal locations for 16 European countries ship in the repo, from GeoNames under CC BY 4.0. The code is MIT. Dedup is by CID, then place ID, then name and address. The key stays in the environment. It does not find owner emails or start outreach.",
+    author: "emanuel",
+    stars: 0,
+    license: "MIT",
+    categories: ["lists"],
+    commands: [
+      {
+        label: "Clone the scraper",
+        value: "git clone https://github.com/gtmadviser/google-maps-scraper.git",
+      },
+    ],
+    skillCountNote: "One skill. Copy skills/google-maps-scraper into the agent's skills folder.",
+  },
+  {
     slug: "cold-outbound",
     name: "Cold outbound skills",
     github: "growthenginenowoslawski/coldoutboundskills",
@@ -174,7 +200,7 @@ export const repos: Repo[] = [
       "Eric Nowoslawski's Claude Code system for cold email: ICP, lists, copy, Smartlead, and deliverability.",
     why: "The free outbound pack we point people to. It is built around a real sending stack, Prospeo and Blitz and Smartlead, and it includes the unglamorous parts: inbox lifecycle, incident response, and a list scorecard before anyone hits send. Fifty-two skills in the repo. The shelf lists the ones to open first.",
     author: "eric",
-    stars: 777,
+    stars: 789,
     license: "see repo",
     categories: ["outbound", "lists", "copy", "deliverability", "icp"],
     commands: [
@@ -194,7 +220,7 @@ export const repos: Repo[] = [
       "A nineteen-skill curriculum for founder-led GTM on a developer tool: ICP, positioning, homepage, pricing, first users, launch.",
     why: "The right pack when the product is a devtool and the founder is still the GTM team. It starts from a founder brief and refuses generic advice. Public description credits Frankl and Czakon. MIT. Product Hunt's top product the day it launched.",
     author: "aidevgtm",
-    stars: 323,
+    stars: 328,
     license: "MIT",
     homepage: "https://gtmcofounder.com",
     categories: ["devtools", "positioning", "copy", "growth"],
@@ -211,7 +237,7 @@ export const repos: Repo[] = [
       "ColdIQ's library of triggers, email frameworks, list hygiene, and GTM plays for Claude Code.",
     why: "A working agency's play library, published. The repo is large, including a LinkedIn ads and content set, and the quality is uneven across ninety-plus skill files. The shelf lists the outbound core: first touch, follow-up, ICP, contacts, and list hygiene.",
     author: "coldiq",
-    stars: 305,
+    stars: 309,
     categories: ["outbound", "copy", "lists", "icp", "linkedin"],
     commands: [
       { label: "Install the skills", value: "npx skills add Cold-IQ/ColdIQ-s-GTM-Skills" },
@@ -227,7 +253,7 @@ export const repos: Repo[] = [
       "Corey Haines' marketing skill pack: copy, CRO, pricing, launch, research, and cold email.",
     why: "The growth layer a GTM agent should load next to an outbound system. Fifty skills cover ads, SEO, and lifecycle. We list the thirteen that change an offer, a page, a price, or a first email. The rest of the repo is public if you want it.",
     author: "corey",
-    stars: 56163,
+    stars: 56895,
     categories: ["growth", "copy", "positioning"],
     commands: [
       { label: "Install the skills", value: "npx skills add coreyhaines31/marketingskills" },
@@ -315,7 +341,7 @@ export const repos: Repo[] = [
     summary: "Public GTM skills described by the authors as production-grade.",
     why: "On the open shelf because the repo is on-topic and public. We have not run it on an engagement, so it does not sit with the vetted packs.",
     author: "swan",
-    stars: 218,
+    stars: 221,
     categories: ["outbound", "operating-system"],
     commands: [{ label: "Repository", value: "https://github.com/swan-gtm/gtm-skills" }],
   },
@@ -327,7 +353,7 @@ export const repos: Repo[] = [
     summary: "Explorium's GTM skills for Claude and Codex: research, enrichment, and prospecting.",
     why: "A data vendor's skill pack. Useful to read if you already use Explorium. Open shelf until we have used it beside a source we already trust.",
     author: "explorium",
-    stars: 295,
+    stars: 322,
     categories: ["lists", "icp"],
     commands: [{ label: "Repository", value: "https://github.com/explorium-ai/gtm-skills" }],
   },
@@ -339,7 +365,7 @@ export const repos: Repo[] = [
     summary: "Agent toolkit for research, intel, outreach, and CRM.",
     why: "Public and clearly GTM. The README is short. Open shelf until someone here has run the toolkit on a live account.",
     author: "gtm-skills",
-    stars: 181,
+    stars: 183,
     categories: ["outbound", "context"],
     commands: [{ label: "Repository", value: "https://github.com/gtm-skills/gtm" }],
   },
@@ -351,7 +377,7 @@ export const repos: Repo[] = [
     summary: "A public go-to-market copilot skill repo.",
     why: "The description is broad. Stars are not a review. It stays on the open shelf until the skills have been read against a real ICP.",
     author: "gtm-strategist",
-    stars: 269,
+    stars: 273,
     categories: ["positioning", "growth"],
     commands: [
       { label: "Repository", value: "https://github.com/GTM-Strategist/gtm-strategist-skills" },
@@ -366,7 +392,7 @@ export const repos: Repo[] = [
       "A Claude Code skill that scores a site for AI-engine and generative-engine optimization.",
     why: "Popular, and narrow. It is a page-audit skill for being cited by answer engines. Useful context for a launch, and a different job from outbound. Open shelf as a specialist, not as a GTM system.",
     author: "onvoyage",
-    stars: 1329,
+    stars: 1338,
     categories: ["growth"],
     commands: [
       { label: "Repository", value: "https://github.com/onvoyage-ai/gtm-engineer-skills" },
@@ -388,15 +414,38 @@ export const repos: Repo[] = [
     commands: [{ label: "Install the skills", value: "npx skills add api-blitz/skills" }],
     skillCountNote: "Three skills in the repo. The GTM and productivity folders are placeholders.",
   },
+  {
+    slug: "gtm-engineer-starter",
+    name: "GTM Engineer Starter",
+    github: "SantaJordan/gtm-engineer-starter",
+    tier: "vetted",
+    summary:
+      "Jordan Crawford's Claude Code starter: account dossiers, won/lost/10X, evidence packets, and a Jev score.",
+    why: "The free Blueprint starter, and a pack we would load when the job is to learn why customers bought and then score a list from that. Six skills, a wiki template, and a fictional company named Northwind. make check passed here with no API keys: 181 packet tests, 233 judge tests (1 skipped), 100 won/lost/10X tests, 7 dossier tests, and 15 auditor tests, then a smoke test (6/6) and the Northwind replay (13/13). The replay scores six recorded Jev answers, accepts two, and marks four insufficient. On the holdout it records no reliable discriminator, which is the result the fixture is built to produce. A live score needs a Jev key. Won/lost/10X needs an Anthropic key. wiki-lint is the weekly wiki pass and has no test suite.",
+    author: "jordan",
+    stars: 21,
+    license: "MIT",
+    homepage: "https://blueprintgtm.com",
+    categories: ["icp", "context", "lists", "measurement"],
+    commands: [
+      {
+        label: "Clone the starter",
+        value: "git clone https://github.com/SantaJordan/gtm-engineer-starter",
+      },
+    ],
+    skillCountNote: "Six skills in the repo.",
+  },
 ];
 
 const house = "agentic-gtm";
+const maps = "maps-scraper";
 const eric = "cold-outbound";
 const cofounder = "gtm-cofounder";
 const coldiq = "coldiq";
 const corey = "marketing-skills";
 const company = "company-os";
 const blitz = "blitz-skills";
+const jordan = "gtm-engineer-starter";
 
 export const skills: Skill[] = [
   {
@@ -518,6 +567,14 @@ export const skills: Skill[] = [
     categories: ["operating-system", "context"],
     summary:
       "Packages a running engine for a new operator: source of truth, decisions, ownership, automations, and the weekly routine.",
+  },
+  {
+    slug: "maps-scraper--google-maps-scraper",
+    name: "google-maps-scraper",
+    repo: maps,
+    categories: ["lists"],
+    summary:
+      "Turns a category and a list of locations into a deduplicated Google Maps CSV through Serper. Dry-run first. The cap is 30 requests unless you set another.",
   },
   {
     slug: "cold-outbound--cold-email-kickoff",
@@ -1116,6 +1173,54 @@ export const skills: Skill[] = [
     summary:
       "Checks the MCP, the SDK, and the code against the live docs, then waits for a yes before it changes anything.",
   },
+  {
+    slug: "gtm-engineer-starter--dossier-data-auditor",
+    name: "dossier-data-auditor",
+    repo: jordan,
+    categories: ["context", "icp"],
+    summary:
+      "Checks a folder of customer files before a dossier build: columns, join keys, domains, and revenue fields that disagree. A failed join stays failed unless someone writes an override.",
+  },
+  {
+    slug: "gtm-engineer-starter--dossier-builder",
+    name: "dossier-builder",
+    repo: jordan,
+    categories: ["context"],
+    summary:
+      "Joins calls, CRM, billing, and the other systems into one timeline per account. Every fact keeps its source.",
+  },
+  {
+    slug: "gtm-engineer-starter--win-loss-rewind",
+    name: "win-loss-rewind",
+    repo: jordan,
+    categories: ["icp", "measurement"],
+    summary:
+      "Labels customers won, lost, or 10X from billing, then keeps a public signal only when it also holds on the accounts that were held out.",
+  },
+  {
+    slug: "gtm-engineer-starter--crawford",
+    name: "crawford",
+    repo: jordan,
+    categories: ["lists", "icp"],
+    summary:
+      "Writes one evidence packet per company or person. Each value has a source and a date. A missing value says why it is missing.",
+  },
+  {
+    slug: "gtm-engineer-starter--calibrated-judge",
+    name: "calibrated-judge",
+    repo: jordan,
+    categories: ["icp", "measurement"],
+    summary:
+      "Scores those packets with Jev. A row comes back accept, reject, review, or insufficient. Unsure rows go to a review queue.",
+  },
+  {
+    slug: "gtm-engineer-starter--wiki-lint",
+    name: "wiki-lint",
+    repo: jordan,
+    categories: ["context"],
+    summary:
+      "Walks a project wiki for orphan pages, broken links, stale claims, and frontmatter that does not match the pattern. It reports the problems and leaves the pages for a person to change.",
+  },
 ];
 
 const tierOrder: Record<Tier, number> = { house: 0, vetted: 1, open: 2 };
@@ -1138,7 +1243,9 @@ export function skillsInRepo(repoSlug: string) {
 
 const shelfOrder = [
   "agentic-gtm",
+  "maps-scraper",
   "cold-outbound",
+  "gtm-engineer-starter",
   "gtm-cofounder",
   "coldiq",
   "marketing-skills",

@@ -23,9 +23,12 @@ export default function MethodPage() {
           <Link href="/repos/agentic-gtm" className="underline">
             Agentic GTM
           </Link>
-          : the operating system from GTM Adviser. House listings stay at the top because the site
-          exists to put that work in front of other operators, next to the best free packs already
-          in the wild.
+          , the operating system, and the{" "}
+          <Link href="/repos/maps-scraper" className="underline">
+            Google Maps scraper
+          </Link>{" "}
+          for local lists. House listings stay at the top because the site exists to put that work
+          in front of other operators, next to the best free packs already in the wild.
         </p>
         <h2 className="pt-4 text-2xl font-medium tracking-tight">Vetted</h2>
         <p>

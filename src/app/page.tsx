@@ -28,7 +28,7 @@ const starts = [
 
 export default async function Home() {
   const submitted = await submissionEntries();
-  const houseSkills = skills.filter((skill) => skill.repo === "agentic-gtm").length;
+  const houseSkills = skills.filter((skill) => repos.find((repo) => repo.slug === skill.repo)?.tier === "house").length;
   const vetted = repos.filter((repo) => repo.tier === "vetted").length;
   const open = repos.filter((repo) => repo.tier === "open").length + submitted.repos.length;
 
